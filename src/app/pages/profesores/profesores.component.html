@@ -1,0 +1,15 @@
+<div class="container mt-5">
+    <h3>Colegio del Olimpo: módulo de profesores</h3><hr>
+
+    <input class="form-control mr-sm-2" type="search" placeholder="Buscar profesor" (keyup.enter)="buscarProfesores(buscarTexto.value)" #buscarTexto>
+    <br>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="buscarProfesores(buscarTexto.value)" #buscarTexto> Buscar</button>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="limpiar()"> Limpiar</button>
+    <br>
+    <br>
+    <br>
+    <h1>Profesores: </h1>
+    <div class="card-columns">
+      <app-profe-tarjeta   (profeSeleccionado)="($event)" [IdProfe]="profe.cod_profesor" [profe] = "profe" *ngFor="let profe of profesores; let i = index;"></app-profe-tarjeta>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="card animated fadeIn fast"> 
+    <div class="card-body">
+        <h3 class="card-title">Profesor: <small>{{profe.nombreProfesor}}</small></h3>  
+        <button (click)="verAsignacion()" *ngIf="vermas"  type="button" class="btn btn-primary" style="width: 100%;">Asignaciones</button>
+        <button (click)="vermenosB()" *ngIf="vermenos" type="button" class="btn btn-danger" style="width: 100%;">Ver menos...</button>
+       <div *ngIf="vermenos"> 
+        <div  class="card text-center"*ngFor="let materia of profe.asignatura">
+            <div class="card-header">
+               Asignatura: {{materia.nombreAsignatura}}
+            </div>
+              <h5 class="card-title">Estudiantes inscritos:</h5>
+            <div *ngFor="let estudiante of materia.estudiante;"> 
+                <i class="far fa-check-circle"> {{estudiante.nombreEstudiante}}  </i> 
+          </div>
+        </div>
+    </div>
+    
+</div>
+ 
